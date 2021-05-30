@@ -16,7 +16,7 @@
             document.getElementById('butt').addEventListener('click',function(){
                 let a=document.getElementById('place').value;
                 console.log(a);
-                fetch(`http://localhost:3000/weather?place=${a}`).then(response=>{
+                fetch(`/weather?place=${a}`).then(response=>{
                     response.json().then(data=>{
                         console.log(data)
                         document.getElementById('msg').innerHTML=data[0].hasOwnProperty('error')?data[0].error:`The weather in ${data[0].place} observed at ${data[0].time} is ${data[0].climate}`
