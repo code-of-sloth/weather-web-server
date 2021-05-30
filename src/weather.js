@@ -16,7 +16,7 @@ function weather(place,res,callback) {
             const url=`http://api.weatherstack.com/current?access_key=4e8613fc875752db4643f7b40c49a3ea&query=${info[0]},${info[1]}`;
             request({url:url,json:true},(error,response)=>{
                 callback(response.body.current.weather_descriptions,response.body.current.observation_time,error)
-                // console.log();
+                // console.log(response);
             })
         }
     })
